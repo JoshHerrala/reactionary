@@ -1,5 +1,6 @@
 class ProductsTable extends React.Component {
   constructor(props) {
+  	debugger
   	super(props);
   }
 

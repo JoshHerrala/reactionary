@@ -1,12 +1,12 @@
-module API
+module Api
 	class ReactTableController < ApplicationController
-	  
 	  def index
-	    #@products = Product.all
+	    @products = Product.all
 	  end
 	  
 	  def initial_data
-	    render json: test_string, root: false, status: 200   
+	    #binding.pry
+	    render json: single_record, root: false, status: 200   
 	  end  
 
 	  def main_table
@@ -15,13 +15,14 @@ module API
 	  
 	  private
 	  
-	  def test_string
-	    "witness my stringyness"
+	  def test_hash
+	    {:id => 12345, :name => "bassomatic"}
 	  end
 
-	  def your_method_here
-	    "do things"
+	  def single_record
+	    monster = Product.where(id: 4).first
 	  end
+
 	end
 
 end

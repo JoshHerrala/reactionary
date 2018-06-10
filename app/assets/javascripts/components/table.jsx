@@ -11,7 +11,7 @@ class Table extends React.Component {
   getInitialData(){
     jQuery.ajax({
       type: "GET",
-      url: "react_table/initial_data",
+      url: "api/react_table/initial_data",
       dataType: 'json',
       success: (data) => {
       	this.setState({data: data})
