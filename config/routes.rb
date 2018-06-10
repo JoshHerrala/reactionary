@@ -14,6 +14,23 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :products
+  resources :react_table do
+      collection do
+        get :initial_data
+        get :main_table
+      end
+   end 
+
+  scope '/api' do
+
+    # resources :react_table do
+    #   member do
+    #     get :initial_data
+    #     get :main_table
+    #   end
+    # end
+  
+  end #end api scope
   
   
   
