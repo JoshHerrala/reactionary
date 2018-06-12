@@ -1,7 +1,7 @@
 class Table extends React.Component {
   constructor(props) {
   	super(props);
-  	this.getInitialData = this.getInitialData.bind(this)
+    this.getInitialData = this.getInitialData.bind(this)
   }
 
   componentDidMount() {
@@ -24,9 +24,10 @@ class Table extends React.Component {
   }
 
   render(){
+    const message = 'There is no data to display';
     return(
       <div>
-      {this.state && this.state.data ? <ProductsTable data={this.state.data} /> : null}
+      {this.state && this.state.data ? <ProductsTable data={this.state.data} /> : message}
       </div>
     )
   }

@@ -1,7 +1,7 @@
 class ProductsTable extends React.Component {
   constructor(props) {
-  	debugger
-  	super(props);
+    super(props);
+    //debugger
   }
 
   render(){
@@ -10,7 +10,7 @@ class ProductsTable extends React.Component {
     	  <div>
     	  Product: { this.props.data.name}
     	  </div>
-    )} else {return(nul)}
+    )} else {return(null)}
   }
 
 }
