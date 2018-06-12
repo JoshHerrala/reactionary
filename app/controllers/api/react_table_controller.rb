@@ -20,7 +20,7 @@ module Api
 	  end
 
 	  def single_record
-	    monster = Product.where(id: 4).first
+	    monster = Product.all.first(2)
 	  end
 
 	end
