@@ -1,17 +1,18 @@
 class ProductsTable extends React.Component {
   constructor(props) {
     super(props);
-    //debugger
   }
 
   render(){
     if (this.props.data){
     	let rows = [];
-      for ( var i =0; i < this.props.data.length; i++){
-        rows.push(<tr><td key={i} id={i}>{this.props.data[i].name}</td></tr>)
-        //tr elements need keys
-      }
       //debugger
+      for ( var i =0; i < this.props.data.length; i++){
+        //debugger
+        //this.props.data[i] = {id: 5, name: "Enfield", description: "Bullet 500", price: "$5000005"}
+        rows.push(<tr>{this.makeRow(this.props.data[i])}</tr>)
+        //                           ^ SyntaxError: unknown: Unexpected token
+      }
       return (
     	  <div>
           <table id="product-table">
@@ -20,10 +21,17 @@ class ProductsTable extends React.Component {
             </tbody>
           </table>          
     	  </div>
-    )} else {return(null)}
+    )} else {return(null)};
+  }
+  
+  makeRow(row){
+    //debugger
+    return (<td> {row.name}  {row.description} </td>);
   }
 
 }
+
+//{id: 5, name: "Enfield", description: "Bullet 500", price: "$5000005"}
 
 // id: 4,
 // name: "Ducati Monster",
