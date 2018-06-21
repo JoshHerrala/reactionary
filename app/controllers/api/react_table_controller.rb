@@ -6,7 +6,7 @@ module Api
 	  
 	  def initial_data
 	    #binding.pry
-	    render json: single_record, root: false, status: 200   
+	    render json: initial_records, root: false, status: 200   
 	  end  
 
 	  def main_table
@@ -19,8 +19,8 @@ module Api
 	    {:id => 12345, :name => "bassomatic"}
 	  end
 
-	  def single_record
-	    monster = Product.all.first(2)
+	  def initial_records
+	    Product.all.select(:id,:name,:description,:price)
 	  end
 
 	end

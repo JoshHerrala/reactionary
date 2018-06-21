@@ -8,7 +8,15 @@ class ProductsTable extends React.Component {
     	let rows = [];
       //debugger
       for ( var i =0; i < this.props.data.length; i++){
-        rows.push(<div>{this.makeRow(this.props.data[i])}</div>)
+         let rowID = `row${i}`
+         let cell = []
+         //debugger
+         for (var ci = 0; ci < Object.keys(this.props.data[i]).length; ci++){
+            let cellID = `cell${i}-${ci}`
+            //debugger
+            cell.push(<td key={cellID} id={cellID}>{Object.values(this.props.data[i])[ci]}</td>)
+         }
+        rows.push(<tr key={i} id={rowID}>{cell}</tr>)
       }
       return (
     	  <div>
