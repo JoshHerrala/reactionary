@@ -8,10 +8,7 @@ class ProductsTable extends React.Component {
     	let rows = [];
       //debugger
       for ( var i =0; i < this.props.data.length; i++){
-        //debugger
-        //this.props.data[i] = {id: 5, name: "Enfield", description: "Bullet 500", price: "$5000005"}
-        rows.push(<tr>{this.makeRow(this.props.data[i])}</tr>)
-        //                           ^ SyntaxError: unknown: Unexpected token
+        rows.push(<div>{this.makeRow(this.props.data[i])}</div>)
       }
       return (
     	  <div>
@@ -26,17 +23,10 @@ class ProductsTable extends React.Component {
   
   makeRow(row){
     //debugger
-    return (<td> {row.name}  {row.description} </td>);
+    Object.keys(row).length
+    return (<tr><td>{row.name}</td><td>{row.description}</td><td>{row.price}</td></tr>);
   }
 
 }
 
-//{id: 5, name: "Enfield", description: "Bullet 500", price: "$5000005"}
-
-// id: 4,
-// name: "Ducati Monster",
-// description: "900cc Monster",
-// price: "$4000",
-// created_at: Fri, 28 Aug 2015 03:34:07 UTC +00:00,
-// updated_at: Fri, 28 Aug 2015 03:41:15 UTC +00:00>
-//Product: { this.props.data[0].name}
+//Object.keys(hashname)[0] and Object.values(row)[i] accessing has values
