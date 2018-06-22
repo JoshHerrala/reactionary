@@ -10,6 +10,7 @@ class ProductsTable extends React.Component {
       for ( var i =0; i < this.props.data.length; i++){
          let rowID = `row${i}`
          let cell = []
+         //makeHeader(this.props.data[0])
          //debugger
          for (var ci = 0; ci < Object.keys(this.props.data[i]).length; ci++){
             let cellID = `cell${i}-${ci}`
@@ -22,6 +23,7 @@ class ProductsTable extends React.Component {
     	  <div>
           <table id="product-table">
     	      <tbody>
+              <tr><th>Product ID</th><th>Name</th><th>Description</th><th>Price</th></tr>
               { rows }
             </tbody>
           </table>          
@@ -29,12 +31,10 @@ class ProductsTable extends React.Component {
     )} else {return(null)};
   }
   
-  makeRow(row){
-    //debugger
-    Object.keys(row).length
-    return (<tr><td>{row.name}</td><td>{row.description}</td><td>{row.price}</td></tr>);
+  makeHeader(){
+    return (<tr><th>Product ID</th><th>Name</th><th>Description</th><th>Price</th></tr>);
   }
 
 }
 
-//Object.keys(hashname)[0] and Object.values(row)[i] accessing has values
+//Object.keys(hashname)[0] and Object.values(row)[i] accessing hash values
