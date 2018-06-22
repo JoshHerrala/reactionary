@@ -5,6 +5,7 @@
 #product-table{
 	border: 1px solid #ddd;
 	text-align: left;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 #product-table td, #product-table th {
     padding: 8px;
@@ -14,5 +15,9 @@
     background-color: gray;
     color: black;
 }
+
+#product-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#product-table tr:hover {background-color: #ddd;}
 
 
