@@ -1,14 +1,14 @@
-<h1>Products</h1>
+<h2>Products</h2>
  
 <table id="product-table">
   <tr>
     <th>Product ID</th>
     <th>Name</th>
     <th>Description</th>
-	<th>Price</th>
-  <th>Show it!</th>
-  <th>Fix it!</th>
-  <th>KILL it!</th>
+  	<th>Price</th>
+    <th>Show it!</th>
+    <th>Fix it!</th>
+    <th>KILL it!</th>
   </tr>
  
   <% @products.each do |product| %>
@@ -16,15 +16,15 @@
       <td><%= product.id %> </td>
       <td><%= product.name %></td>
       <td><%= product.description %></td>
-	  <td><%= product.price %> </td>
-	  <td> <%= link_to 'Show', product_path(product) %> </td>
-    <td> <%= link_to 'Edit Product', edit_product_path(product) %> </td>
-    <td> <%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+  	  <td><%= product.price %> </td>
+  	  <td> <%= link_to '<button>Show</button>'.html_safe, product_path(product) %> </td>
+      <td> <%= link_to '<button>Edit Product</button>'.html_safe, edit_product_path(product) %> </td>
+      <td> <%= link_to '<button>Delete</button>'.html_safe, product_path(product), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to '<button>New Product</button>'.html_safe, new_product_path %>
 
 <%= react_component("Post", {title: "The same data with REACT"}) %>
 
