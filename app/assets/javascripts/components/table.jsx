@@ -2,7 +2,6 @@ class Table extends React.Component {
   constructor(props) {
   	super(props);
     this.getInitialData = this.getInitialData.bind(this)
-    this.state = this.getInitialData
   }
 
   componentDidMount() {
@@ -25,7 +24,6 @@ class Table extends React.Component {
   }
 
   render(){
-    debugger
     if (this.state){
       let rows = [];
       //debugger
