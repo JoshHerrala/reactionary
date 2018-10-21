@@ -24,13 +24,42 @@ class Table extends React.Component {
   }
 
   render(){
-    const message = 'There is no data to display';
-    return(
-      <div>
-      {this.state && this.state.data ? <ProductsTable data={this.state.data} /> : message}
-      </div>
-    )
+    if (this.state){
+      let rows = [];
+      //debugger
+      for ( var i =0; i < this.state.data.length; i++){
+         let rowID = `row${i}`
+         let cell = []
+         for (var ci = 0; ci < Object.keys(this.state.data[i]).length; ci++){
+            let cellID = `cell${i}-${ci}`
+            //debugger
+            cell.push(<td key={cellID} id={cellID}>{Object.values(this.state.data[i])[ci]}</td>)
+         }
+        rows.push(<tr key={i} id={rowID}>{cell}</tr>)
+      }
+      return (
+        <div>
+          <table id="product-table">
+            <tbody>
+              <tr><th>Product ID</th><th>Name</th><th>Description</th><th>Price</th></tr>
+              { rows }
+            </tbody>
+          </table>          
+        </div>
+    )} else {return(null)};
   }
+
+
+  // render(){
+  //   const message = 'There is no data to display';
+  //   return(
+  //     <div>
+  //     {this.state && this.state.data ? <ProductsTable data={this.state.data} /> : message}
+  //     </div>
+  //   )
+  // }
+
+
 }
   
 
